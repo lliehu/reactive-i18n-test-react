@@ -1,3 +1,23 @@
+# Reactive I18n test with React and Redux
+
+## TODO
+
+* Decide on i18n library/framework
+* See all the requirements from the thesis.
+* First see if Redux alone is enough. If not, then add another component, for example redux-observable, redux-cycles or RxJS.
+
+## Project setup
+
+```
+docker-compose up
+```
+
+This will create a Docker container and run `npm install`.
+
+If Dockerfile has been changed, the image needs to be rebuilt with `docker-compose build`.
+
+## Stuff written by Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
