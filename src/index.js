@@ -4,35 +4,13 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import './index.css';
 import App from './App';
+import messages from './messages';
 import * as serviceWorker from './serviceWorker';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
-    resources: {
-      en: {
-        translation: {
-          "applicationName": "Reactive I18n Test With React, i18next and Redux",
-          "messageLogTitle": "Message Log",
-          "languageSwitcherTitle": "Language Selection",
-          "zoomInTitle": "Zoom in",
-          "zoomOutTitle": "Zoom out",
-          "mapTitle": "Map",
-          "testMessage": "Testing, 1, 2, 3...",
-        }
-      },
-      fi: {
-        translation: {
-          "applicationName": "Reaktiivinen internationalisointitesti Reactilla, i18nextillä ja Reduxilla",
-          "messageLogTitle": "Viestiloki",
-          "languageSwitcherTitle": "Kielivalinta",
-          "zoomInTitle": "Lähennä",
-          "zoomOutTitle": "Loitonna",
-          "mapTitle": "Kartta",
-          "testMessage": "Kokeillaan, 1, 2, 3...",
-        }
-      }
-    },
+    resources: messages,
     lng: "en",
     fallbackLng: "en",
 

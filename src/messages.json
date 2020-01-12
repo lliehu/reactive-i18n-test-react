@@ -1,0 +1,24 @@
+{
+  "en": {
+    "translation": {
+      "applicationName": "Reactive I18n Test With React, i18next and Redux",
+      "messageLogTitle": "Message Log",
+      "languageSwitcherTitle": "Language Selection",
+      "zoomInTitle": "Zoom in",
+      "zoomOutTitle": "Zoom out",
+      "mapTitle": "Map",
+      "testMessage": "Testing, 1, 2, 3..."
+    }
+  },
+  "fi": {
+    "translation": {
+      "applicationName": "Reaktiivinen internationalisointitesti Reactilla, i18nextillä ja Reduxilla",
+      "messageLogTitle": "Viestiloki",
+      "languageSwitcherTitle": "Kielivalinta",
+      "zoomInTitle": "Lähennä",
+      "zoomOutTitle": "Loitonna",
+      "mapTitle": "Kartta",
+      "testMessage": "Kokeillaan, 1, 2, 3..."
+    }
+  }
+}
