@@ -13,13 +13,19 @@ i18n
       en: {
         translation: {
           "applicationName": "Reactive I18n Test With React, i18next and Redux",
-          "languageSwitcherTitle": "Language Selection"
+          "languageSwitcherTitle": "Language Selection",
+          "zoomInTitle": "Zoom in",
+          "zoomOutTitle": "Zoom out",
+          "mapTitle": "Map",
         }
       },
       fi: {
         translation: {
           "applicationName": "Reaktiivinen internationalisointitesti Reactilla, i18nextillä ja Reduxilla",
-          "languageSwitcherTitle": "Kielivalinta"
+          "languageSwitcherTitle": "Kielivalinta",
+          "zoomInTitle": "Lähennä",
+          "zoomOutTitle": "Loitonna",
+          "mapTitle": "Kartta",
         }
       }
     },
