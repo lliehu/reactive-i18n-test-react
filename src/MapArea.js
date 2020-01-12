@@ -30,10 +30,24 @@ const MapArea = (props) => {
   const zoomInTitle = t('zoomInTitle');
   const zoomOutTitle = t('zoomOutTitle');
 
+  // TODO Is using a ref here really a good idea?
+  const mapRef = React.createRef();
+
+  function addMarker(event) {
+    props.addLogMessage('markerAddedMessage', {
+      position: event.latlng.toString()
+    })
+    let marker = leaflet.marker(event.latlng)
+    marker.bindPopup(event.latlng.toString())
+    // TODO Why is mapRef.current null?
+    // marker.addTo(mapRef.current.leafletElement)
+  }
+
   return (
     <div>
       <h2>{t('mapTitle')}</h2>
       <Map center={position} zoom={mapState.zoom} zoomControl={false}
+        onClick={addMarker} ref={mapRef}
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

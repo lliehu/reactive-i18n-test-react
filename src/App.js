@@ -1,36 +1,53 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { withTranslation } from 'react-i18next';
 import './App.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import MessageLog from './MessageLog';
 import MapArea from './MapArea';
 
-function App() {
-  const { t } = useTranslation();
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      messageList: [
+        {
+          time: new Date(),
+          messageId: 'testMessage'
+        },
+        {
+          time: new Date(),
+          messageId: 'testMessage'
+        },
+        {
+          time: new Date(),
+          messageId: 'testMessage'
+        }
+      ]
+    };
+  }
 
-  const messageList = [
-    {
-      time: new Date(),
-      messageId: 'testMessage'
-    },
-    {
-      time: new Date(),
-      messageId: 'testMessage'
-    },
-    {
-      time: new Date(),
-      messageId: 'testMessage'
-    }
-  ];
+  addLogMessage(messageId, parameters = {}) {
+    this.setState((state, props) => {
+      return {
+        messageList: state.messageList.concat([{
+          time: new Date(),
+          messageId,
+          parameters
+        }])
+      }
+    });
+  }
 
-  return (
-    <div className="App">
-      <h1>{t('applicationName')}</h1>
-      <LanguageSwitcher />
-      <MessageLog messageList={messageList} />
-      <MapArea />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        <h1>{this.props.t('applicationName')}</h1>
+        <LanguageSwitcher />
+        <MessageLog messageList={this.state.messageList} />
+        <MapArea addLogMessage={this.addLogMessage.bind(this)}/>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withTranslation()(App);
