@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import i18n from 'i18next';
-import { useTranslation, initReactI18next } from 'react-i18next';
+import { initReactI18next } from 'react-i18next';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
@@ -12,12 +12,14 @@ i18n
     resources: {
       en: {
         translation: {
-          "applicationName": "Reactive I18n Test With React, i18next and Redux"
+          "applicationName": "Reactive I18n Test With React, i18next and Redux",
+          "languageSwitcherTitle": "Language Selection"
         }
       },
       fi: {
         translation: {
-          "applicationName": "Reaktiivinen internationalisointitesti Reactilla, i18nextillä ja Reduxilla"
+          "applicationName": "Reaktiivinen internationalisointitesti Reactilla, i18nextillä ja Reduxilla",
+          "languageSwitcherTitle": "Kielivalinta"
         }
       }
     },
