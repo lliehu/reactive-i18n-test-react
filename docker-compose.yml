@@ -7,9 +7,7 @@ services:
     volumes:
       - .:/opt/app
       # Hack for excluding node_modules
-      - reserved:/opt/app/node_modules/
+      - /opt/app/node_modules/
     entrypoint:
       - npm
       - start
-volumes:
-  reserved:
