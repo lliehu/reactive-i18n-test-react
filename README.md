@@ -1,6 +1,6 @@
-# Reactive I18n test with React and react-i18next
+# Reactive localization test with React and react-i18next
 
-This is just an application for testing reactive internationalization, related to my Master's Thesis.
+This is just an application for testing reactive localization, related to my Master's Thesis.
 
 ## Project setup
 
