@@ -6,6 +6,7 @@
       "languageSwitcherTitle": "Language Selection",
       "zoomInTitle": "Zoom in",
       "zoomOutTitle": "Zoom out",
+      "automaticLanguage": "Auto",
       "mapTitle": "Map",
       "testMessage": "Testing, 1, 2, 3...",
       "markerAddedMessage": "Marker was added to the map at {{position}}."
@@ -18,6 +19,7 @@
       "languageSwitcherTitle": "Kielivalinta",
       "zoomInTitle": "Lähennä",
       "zoomOutTitle": "Loitonna",
+      "automaticLanguage": "Automaattinen",
       "mapTitle": "Kartta",
       "testMessage": "Kokeillaan, 1, 2, 3...",
       "markerAddedMessage": "Merkki lisättiin kartalle kohtaan {{position}}."

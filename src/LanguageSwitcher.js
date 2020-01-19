@@ -22,10 +22,18 @@ class LanguageSwitcher extends React.Component {
     });
   }
 
+  switchLanguageToAuto() {
+    this.setState({
+      manuallySelectedLanguage: false
+    });
+    i18next.changeLanguage(navigator.language);
+  }
+
   render() {
     return (
       <div>
         <h2>{this.props.t('languageSwitcherTitle')}</h2>
+        <button onClick={this.switchLanguageToAuto.bind(this)}>{this.props.t('automaticLanguage')}</button>
         <button onClick={this.switchLanguageTo.bind(this, 'fi')}>Suomi</button>
         <button onClick={this.switchLanguageTo.bind(this, 'en')}>English</button>
       </div>
