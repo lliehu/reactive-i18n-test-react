@@ -12,6 +12,13 @@ This will create a Docker container and run `npm install`.
 
 If Dockerfile has been changed, the image needs to be rebuilt with `docker-compose build`.
 
+## Features
+
+* Language switcher (without automatic language switch on user agent language change)
+* Message log where the language of all messages can be changed retrospectively
+* Map (Leaflet integration) with localized UI controls
+* Ability to add markers to the map (log message is generated)
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
