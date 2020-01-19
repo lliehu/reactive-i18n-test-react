@@ -1,10 +1,6 @@
-# Reactive I18n test with React, react-i18next and Redux
+# Reactive I18n test with React and react-i18next
 
-## TODO
-
-* react-i18next
-* See all the requirements from the thesis.
-* First see if Redux alone is enough. If not, then add another component, for example redux-observable, redux-cycles or RxJS.
+This is just an application for testing reactive internationalization, related to my Master's Thesis.
 
 ## Project setup
 
