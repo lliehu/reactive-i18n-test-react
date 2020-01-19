@@ -1,7 +1,7 @@
 {
   "en": {
     "translation": {
-      "applicationName": "Reactive I18n Test With React, i18next and Redux",
+      "applicationName": "Reactive Localization Test With React and i18next",
       "messageLogTitle": "Message Log",
       "languageSwitcherTitle": "Language Selection",
       "zoomInTitle": "Zoom in",
@@ -13,7 +13,7 @@
   },
   "fi": {
     "translation": {
-      "applicationName": "Reaktiivinen internationalisointitesti Reactilla, i18nextillä ja Reduxilla",
+      "applicationName": "Reaktiivinen lokalisointitesti Reactilla ja i18nextillä",
       "messageLogTitle": "Viestiloki",
       "languageSwitcherTitle": "Kielivalinta",
       "zoomInTitle": "Lähennä",
