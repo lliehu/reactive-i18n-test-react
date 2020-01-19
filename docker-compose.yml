@@ -9,5 +9,9 @@ services:
       # Hack for excluding node_modules
       - /opt/app/node_modules/
     entrypoint:
+      # - /bin/bash
       - npm
       - start
+    # To help with debugging if needed:
+    # tty: true
+    # stdin_open: true
