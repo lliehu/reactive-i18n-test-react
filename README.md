@@ -14,7 +14,7 @@ If Dockerfile has been changed, the image needs to be rebuilt with `docker-compo
 
 ## Features
 
-* Language switcher (without automatic language switch on user agent language change)
+* Language switcher (automatic language switch on user agent language change)
 * Message log where the language of all messages can be changed retrospectively
 * Map (Leaflet integration) with localized UI controls
 * Ability to add markers to the map (log message is generated)
