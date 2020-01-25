@@ -12,8 +12,12 @@ const MessageLog = (props) => {
         <p key={index}>
           [{
             new Intl.DateTimeFormat(i18n.language, {
-              dateStyle: 'medium',
-              timeStyle: 'medium'
+              year: 'numeric',
+              month: 'numeric',
+              day: 'numeric',
+              hour: 'numeric',
+              minute: 'numeric',
+              second: 'numeric'
             }).format(message.time)
           }]&nbsp;
           {t(message.messageId, message.parameters)}
