@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { Helmet } from "react-helmet";
 import './App.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import MessageLog from './MessageLog';
@@ -41,6 +42,9 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <Helmet>
+          <title>{this.props.t('applicationName')}</title>
+        </Helmet>
         <h1>{this.props.t('applicationName')}</h1>
         <LanguageSwitcher />
         <MessageLog messageList={this.state.messageList} />
