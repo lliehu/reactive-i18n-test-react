@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import leaflet from 'leaflet';
@@ -26,12 +26,10 @@ const mapState = {
 const position = [mapState.lat, mapState.lng];
 
 const MapArea = (props) => {
+  const [markerList, setMarkerList] = useState([position]);
   const { t } = useTranslation();
   const zoomInTitle = t('zoomInTitle');
   const zoomOutTitle = t('zoomOutTitle');
-
-  // TODO Is using a ref here really a good idea?
-  const mapRef = React.createRef();
 
   function addMarker(event) {
     props.addLogMessage('markerAddedMessage', {
@@ -39,25 +37,26 @@ const MapArea = (props) => {
     })
     let marker = leaflet.marker(event.latlng)
     marker.bindPopup(event.latlng.toString())
-    // TODO Why is mapRef.current null?
-    // marker.addTo(mapRef.current.leafletElement)
+    setMarkerList(markerList.concat([event.latlng]))
   }
 
   return (
     <div>
       <h2>{t('mapTitle')}</h2>
       <Map center={position} zoom={mapState.zoom} zoomControl={false}
-        onClick={addMarker} ref={mapRef}
+        onClick={addMarker}
       >
         <TileLayer
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        { markerList.map((marker, index) => (
+          <Marker position={marker}>
+            <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+              </Popup>
+          </Marker>
+        )) }
         {/* Using key forces remounting of ZoomControl when zoomInTitle or zoomOutTitle change. */}
         <ZoomControl zoomInTitle={zoomInTitle} zoomOutTitle={zoomOutTitle} key={zoomInTitle + '|' + zoomOutTitle}/>
       </Map>
