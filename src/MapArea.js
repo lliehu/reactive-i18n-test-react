@@ -53,8 +53,8 @@ const MapArea = (props) => {
         { markerList.map((marker, index) => (
           <Marker position={marker}>
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-              </Popup>
+              <button>{t('addNewCommentButton')}</button>
+            </Popup>
           </Marker>
         )) }
         {/* Using key forces remounting of ZoomControl when zoomInTitle or zoomOutTitle change. */}
