@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Button } from 'reactstrap';
+
 import leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 
@@ -53,7 +55,7 @@ const MapArea = (props) => {
         { markerList.map((marker, index) => (
           <Marker position={marker}>
             <Popup>
-              <button>{t('addNewCommentButton')}</button>
+              <Button color="primary">{t('addNewCommentButton')}</Button>
             </Popup>
           </Marker>
         )) }
