@@ -1,7 +1,7 @@
 import React from 'react';
 import i18next from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { Button, ButtonGroup } from 'reactstrap';
+import { Button, ButtonGroup, Card, CardBody, CardTitle } from 'reactstrap';
 
 const languages = [
   {
@@ -43,25 +43,27 @@ class LanguageSwitcher extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>{this.props.t('languageSwitcherTitle')}</h2>
-        <ButtonGroup>
-          <Button
-            onClick={this.switchLanguageToAuto.bind(this)}
-            active={!!!this.state.manuallySelectedLanguage}
-          >
-            {this.props.t('automaticLanguage')}
-          </Button>
-          {languages.map(language => (
+      <Card>
+        <CardBody>
+          <CardTitle>{this.props.t('languageSwitcherTitle')}</CardTitle>
+          <ButtonGroup>
             <Button
-              onClick={this.switchLanguageTo.bind(this, language.code)}
-              active={!!this.state.manuallySelectedLanguage && i18next.language === language.code}
+              onClick={this.switchLanguageToAuto.bind(this)}
+              active={!!!this.state.manuallySelectedLanguage}
             >
-              {language.nativeName}
+              {this.props.t('automaticLanguage')}
             </Button>
-          ))}
-        </ButtonGroup>
-      </div>
+            {languages.map(language => (
+              <Button
+                onClick={this.switchLanguageTo.bind(this, language.code)}
+                active={!!this.state.manuallySelectedLanguage && i18next.language === language.code}
+              >
+                {language.nativeName}
+              </Button>
+            ))}
+          </ButtonGroup>
+        </CardBody>
+      </Card>
     );
   }
 };

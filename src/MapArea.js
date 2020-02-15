@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import { Card, CardBody, CardTitle } from 'reactstrap';
+
 import { Button } from 'reactstrap';
 
 import leaflet from 'leaflet';
@@ -43,8 +45,10 @@ const MapArea = (props) => {
   }
 
   return (
-    <div>
-      <h2>{t('mapTitle')}</h2>
+    <Card>
+      <CardBody>
+        <CardTitle>{t('mapTitle')}</CardTitle>
+      </CardBody>
       <Map center={position} zoom={mapState.zoom} zoomControl={false}
         onClick={addMarker}
       >
@@ -62,7 +66,7 @@ const MapArea = (props) => {
         {/* Using key forces remounting of ZoomControl when zoomInTitle or zoomOutTitle change. */}
         <ZoomControl zoomInTitle={zoomInTitle} zoomOutTitle={zoomOutTitle} key={zoomInTitle + '|' + zoomOutTitle}/>
       </Map>
-    </div>
+    </Card>
   );
 };
 
