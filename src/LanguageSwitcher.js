@@ -1,6 +1,7 @@
 import React from 'react';
 import i18next from 'i18next';
 import { withTranslation } from 'react-i18next';
+import { Button, ButtonGroup } from 'reactstrap';
 
 class LanguageSwitcher extends React.Component {
   constructor(props) {
@@ -33,9 +34,11 @@ class LanguageSwitcher extends React.Component {
     return (
       <div>
         <h2>{this.props.t('languageSwitcherTitle')}</h2>
-        <button onClick={this.switchLanguageToAuto.bind(this)}>{this.props.t('automaticLanguage')}</button>
-        <button onClick={this.switchLanguageTo.bind(this, 'fi')}>Suomi</button>
-        <button onClick={this.switchLanguageTo.bind(this, 'en')}>English</button>
+        <ButtonGroup>
+          <Button onClick={this.switchLanguageToAuto.bind(this)} active={!!!this.state.manuallySelectedLanguage}>{this.props.t('automaticLanguage')}</Button>{' '}
+          <Button onClick={this.switchLanguageTo.bind(this, 'fi')} active={!!this.state.manuallySelectedLanguage && i18next.language === 'fi'}>Suomi</Button>{' '}
+          <Button onClick={this.switchLanguageTo.bind(this, 'en')} active={!!this.state.manuallySelectedLanguage && i18next.language === 'en'}>English</Button>
+        </ButtonGroup>
       </div>
     );
   }

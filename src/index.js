@@ -6,6 +6,7 @@ import './index.css';
 import App from './App';
 import messages from './messages';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
