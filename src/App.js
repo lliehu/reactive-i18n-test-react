@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
+import { Navbar, NavbarBrand } from 'reactstrap';
 import { Helmet } from "react-helmet";
 import './App.css';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -45,7 +46,9 @@ class App extends React.Component {
         <Helmet>
           <title>{this.props.t('applicationName')}</title>
         </Helmet>
-        <h1>{this.props.t('applicationName')}</h1>
+        <Navbar color="light">
+          <NavbarBrand>{this.props.t('applicationName')}</NavbarBrand>
+        </Navbar>
         <LanguageSwitcher />
         <MessageLog messageList={this.state.messageList} />
         <MapArea addLogMessage={this.addLogMessage.bind(this)}/>
