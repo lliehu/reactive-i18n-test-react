@@ -1,7 +1,7 @@
 import React from 'react';
 import i18next from 'i18next';
 import { withTranslation } from 'react-i18next';
-import { Button, ButtonGroup, Card, CardBody, CardTitle } from 'reactstrap';
+import { Button, ButtonGroup } from 'reactstrap';
 
 const languages = [
   {
