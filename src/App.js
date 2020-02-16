@@ -48,12 +48,10 @@ class App extends React.Component {
         </Helmet>
         <Navbar color="light">
           <NavbarBrand>{this.props.t('applicationName')}</NavbarBrand>
+          <LanguageSwitcher />
         </Navbar>
         <Container fluid={true}>
           <Row>
-            <Col>
-              <LanguageSwitcher />
-            </Col>
             <Col>
               <MessageLog messageList={this.state.messageList} />
             </Col>

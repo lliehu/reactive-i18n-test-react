@@ -43,27 +43,22 @@ class LanguageSwitcher extends React.Component {
 
   render() {
     return (
-      <Card>
-        <CardBody>
-          <CardTitle>{this.props.t('languageSwitcherTitle')}</CardTitle>
-          <ButtonGroup>
-            <Button
-              onClick={this.switchLanguageToAuto.bind(this)}
-              active={!!!this.state.manuallySelectedLanguage}
-            >
-              {this.props.t('automaticLanguage')}
-            </Button>
-            {languages.map(language => (
-              <Button
-                onClick={this.switchLanguageTo.bind(this, language.code)}
-                active={!!this.state.manuallySelectedLanguage && i18next.language === language.code}
-              >
-                {language.nativeName}
-              </Button>
-            ))}
-          </ButtonGroup>
-        </CardBody>
-      </Card>
+      <ButtonGroup>
+        <Button
+          onClick={this.switchLanguageToAuto.bind(this)}
+          active={!!!this.state.manuallySelectedLanguage}
+        >
+          {this.props.t('automaticLanguage')}
+        </Button>
+        {languages.map(language => (
+          <Button
+            onClick={this.switchLanguageTo.bind(this, language.code)}
+            active={!!this.state.manuallySelectedLanguage && i18next.language === language.code}
+          >
+            {language.nativeName}
+          </Button>
+        ))}
+      </ButtonGroup>
     );
   }
 };
