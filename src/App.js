@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import './App.css';
 import LanguageSwitcher from './LanguageSwitcher';
 import MessageLog from './MessageLog';
+import MapNavigator from './MapNavigator';
 import MapArea from './MapArea';
 
 class App extends React.Component {
@@ -52,6 +53,9 @@ class App extends React.Component {
         </Navbar>
         <Container fluid={true}>
           <Row>
+            <Col>
+              <MapNavigator />
+            </Col>
             <Col>
               <MessageLog messageList={this.state.messageList} />
             </Col>
