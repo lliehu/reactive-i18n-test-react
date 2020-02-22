@@ -52,6 +52,7 @@ class LanguageSwitcher extends React.Component {
         </Button>
         {languages.map(language => (
           <Button
+            key={language.code}
             onClick={this.switchLanguageTo.bind(this, language.code)}
             active={!!this.state.manuallySelectedLanguage && i18next.language === language.code}
           >

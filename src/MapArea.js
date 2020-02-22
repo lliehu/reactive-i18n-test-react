@@ -57,7 +57,7 @@ const MapArea = (props) => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         { markerList.map((marker, index) => (
-          <Marker position={marker}>
+          <Marker key={index} position={marker}>
             <Popup>
               <Button color="primary">{t('addNewCommentButton')}</Button>
             </Popup>
