@@ -12,20 +12,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      messageList: [
-        {
-          time: new Date(),
-          messageId: 'testMessage'
-        },
-        {
-          time: new Date(),
-          messageId: 'testMessage'
-        },
-        {
-          time: new Date(),
-          messageId: 'testMessage'
-        }
-      ],
+      messageList: [],
       center: [61.45, 23.85]
     };
   }
