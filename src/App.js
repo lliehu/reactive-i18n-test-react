@@ -25,19 +25,28 @@ class App extends React.Component {
           time: new Date(),
           messageId: 'testMessage'
         }
-      ]
+      ],
+      center: [61.45, 23.85]
     };
   }
 
   addLogMessage(messageId, parameters = {}) {
     this.setState((state, props) => {
-      return {
+      return Object.assign({}, state, {
         messageList: state.messageList.concat([{
           time: new Date(),
           messageId,
           parameters
         }])
-      }
+      });
+    });
+  }
+
+  flyTo(coordinates) {
+    this.setState((state, props) => {
+      return Object.assign({}, state, {
+        center: coordinates
+      });
     });
   }
 
@@ -54,7 +63,7 @@ class App extends React.Component {
         <Container fluid={true}>
           <Row>
             <Col>
-              <MapNavigator />
+              <MapNavigator onChange={this.flyTo.bind(this)}/>
             </Col>
             <Col>
               <MessageLog messageList={this.state.messageList} />
@@ -62,7 +71,7 @@ class App extends React.Component {
           </Row>
           <Row>
             <Col>
-              <MapArea addLogMessage={this.addLogMessage.bind(this)}/>
+              <MapArea addLogMessage={this.addLogMessage.bind(this)} center={this.state.center}/>
             </Col>
           </Row>
         </Container>

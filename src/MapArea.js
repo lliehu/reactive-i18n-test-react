@@ -49,7 +49,7 @@ const MapArea = (props) => {
       <CardBody>
         <CardTitle>{t('mapTitle')}</CardTitle>
       </CardBody>
-      <Map center={position} zoom={mapState.zoom} zoomControl={false}
+      <Map center={props.center} zoom={mapState.zoom} zoomControl={false}
         onClick={addMarker}
       >
         <TileLayer
