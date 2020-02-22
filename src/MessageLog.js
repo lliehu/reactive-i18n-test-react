@@ -10,23 +10,21 @@ const MessageLog = (props) => {
         <CardTitle>
           {t('messageLogTitle')}
         </CardTitle>
-        <CardText>
-          { props.messageList.map((message, index) => (
-            <p key={index}>
-              [{
-                new Intl.DateTimeFormat(i18n.language, {
-                  year: 'numeric',
-                  month: 'numeric',
-                  day: 'numeric',
-                  hour: 'numeric',
-                  minute: 'numeric',
-                  second: 'numeric'
-                }).format(message.time)
-              }]&nbsp;
-              {t(message.messageId, message.parameters)}
-            </p>
-          )) }
-        </CardText>
+        { props.messageList.map((message, index) => (
+          <CardText key={index}>
+            [{
+              new Intl.DateTimeFormat(i18n.language, {
+                year: 'numeric',
+                month: 'numeric',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
+              }).format(message.time)
+            }]&nbsp;
+            {t(message.messageId, message.parameters)}
+          </CardText>
+        )) }
       </CardBody>
     </Card>
   );
