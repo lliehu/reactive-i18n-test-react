@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Card, CardBody, CardText, CardTitle } from 'reactstrap';
+import { Button, Card, CardBody, CardTitle } from 'reactstrap';
 import Select from 'react-select';
 
 const locations = [
@@ -24,14 +24,12 @@ const MapNavigator = (props) => {
         <CardTitle>
           {t('mapNavigatorTitle')}
         </CardTitle>
-        <CardText>
-          <Select
+        <Select
             value={value}
             onChange={value => setValue(value)}
             options={locations}
           />
           <Button onClick={() => {props.onChange(value.value)}}>{t('navigateMapButton')}</Button>
-        </CardText>
       </CardBody>
     </Card>
   );
