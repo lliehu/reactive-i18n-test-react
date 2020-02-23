@@ -31,7 +31,10 @@ const position = [mapState.lat, mapState.lng];
 
 const MapArea = (props) => {
   const [markerList, setMarkerList] = useState([position]);
+  const [markerComments, setMarkerComments] = useState({});
+  const [selectedMarker, setSelectedMarker] = useState(null);
   const [modal, setModal] = useState(false);
+  const [newMarkerCommentText, setNewMarkerCommentText] = useState('');
   const toggle = () => setModal(!modal);
   const { t } = useTranslation();
   const zoomInTitle = t('zoomInTitle');
@@ -61,7 +64,10 @@ const MapArea = (props) => {
         { markerList.map((marker, index) => (
           <Marker key={index} position={marker}>
             <Popup>
-              <Button color="primary" onClick={toggle}>{t('addNewCommentButton')}</Button>
+              {(markerComments[marker] || []).map((comment) => (
+                <p>{comment}</p>
+              ))}
+              <Button color="primary" onClick={() => {setSelectedMarker(marker); toggle();}}>{t('addNewCommentButton')}</Button>
             </Popup>
           </Marker>
         )) }
@@ -71,10 +77,10 @@ const MapArea = (props) => {
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>{t('addNewCommentTitle')}</ModalHeader>
         <ModalBody>
-          <Input type="textarea"/>
+          <Input type="textarea" value={newMarkerCommentText} onChange={(event) => setNewMarkerCommentText(event.target.value)}/>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>{t('addNewCommentButton')}</Button>{' '}
+          <Button color="primary" onClick={() => {setMarkerComments(Object.assign({}, markerComments, {[selectedMarker]: (markerComments[selectedMarker] || []).concat(newMarkerCommentText)})); toggle(); setNewMarkerCommentText('')}}>{t('addNewCommentButton')}</Button>{' '}
           <Button color="secondary" onClick={toggle}>{t('cancelButton')}</Button>
         </ModalFooter>
       </Modal>
