@@ -28,6 +28,10 @@ const MapNavigator = (props) => {
             value={value}
             onChange={value => setValue(value)}
             options={locations}
+            placeholder={t('locationSelectPlaceholder')}
+            loadingMessage={() => t('locationSelectLoadingMessage')}
+            noOptionsMessage={() => t('locationSelectNoOptions')}
+
           />
           <Button onClick={() => {props.onChange(value.value)}}>{t('navigateMapButton')}</Button>
       </CardBody>
