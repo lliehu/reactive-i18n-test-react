@@ -36,7 +36,7 @@ const MapArea = (props) => {
   const [modal, setModal] = useState(false);
   const [newMarkerCommentText, setNewMarkerCommentText] = useState('');
   const toggle = () => setModal(!modal);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const zoomInTitle = t('zoomInTitle');
   const zoomOutTitle = t('zoomOutTitle');
 
@@ -65,7 +65,22 @@ const MapArea = (props) => {
           <Marker key={index} position={marker}>
             <Popup>
               {(markerComments[marker] || []).map((comment) => (
-                <p>{comment}</p>
+                <div>
+                  <p>
+                    <span>
+                      {t('commentPrefix', {time: new Intl.DateTimeFormat(i18n.language, {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        second: 'numeric'
+                      }).format(comment.time)})}
+                    </span>
+                    <br/>
+                    {comment.text}
+                  </p>
+                </div>
               ))}
               <Button color="primary" onClick={() => {setSelectedMarker(marker); toggle();}}>{t('addNewCommentButton')}</Button>
             </Popup>
@@ -80,7 +95,7 @@ const MapArea = (props) => {
           <Input type="textarea" value={newMarkerCommentText} onChange={(event) => setNewMarkerCommentText(event.target.value)}/>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={() => {setMarkerComments(Object.assign({}, markerComments, {[selectedMarker]: (markerComments[selectedMarker] || []).concat(newMarkerCommentText)})); toggle(); setNewMarkerCommentText('')}}>{t('addNewCommentButton')}</Button>{' '}
+          <Button color="primary" onClick={() => {setMarkerComments(Object.assign({}, markerComments, {[selectedMarker]: (markerComments[selectedMarker] || []).concat({time: new Date(), text: newMarkerCommentText})})); toggle(); setNewMarkerCommentText('')}}>{t('addNewCommentButton')}</Button>{' '}
           <Button color="secondary" onClick={toggle}>{t('cancelButton')}</Button>
         </ModalFooter>
       </Modal>

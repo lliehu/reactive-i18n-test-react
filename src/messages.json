@@ -17,7 +17,8 @@
       "markerAddedMessage": "Marker was added to the map at {{position}}.",
       "addNewCommentButton": "Add new comment",
       "addNewCommentTitle": "Add new comment",
-      "cancelButton": "Cancel"
+      "cancelButton": "Cancel",
+      "commentPrefix": "Someone commented {{time}}:"
     }
   },
   "fi": {
@@ -38,7 +39,8 @@
       "markerAddedMessage": "Merkki lisättiin kartalle kohtaan {{position}}.",
       "addNewCommentButton": "Lisää uusi kommentti",
       "addNewCommentTitle": "Uuden kommentin lisääminen",
-      "cancelButton": "Peru"
+      "cancelButton": "Peru",
+      "commentPrefix": "Joku kommentoi {{time}}:"
     }
   }
 }
