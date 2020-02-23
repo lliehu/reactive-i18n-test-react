@@ -15,7 +15,9 @@
       "mapTitle": "Map",
       "testMessage": "Testing, 1, 2, 3...",
       "markerAddedMessage": "Marker was added to the map at {{position}}.",
-      "addNewCommentButton": "Add new comment"
+      "addNewCommentButton": "Add new comment",
+      "addNewCommentTitle": "Add new comment",
+      "cancelButton": "Cancel"
     }
   },
   "fi": {
@@ -34,7 +36,9 @@
       "mapTitle": "Kartta",
       "testMessage": "Kokeillaan, 1, 2, 3...",
       "markerAddedMessage": "Merkki lisättiin kartalle kohtaan {{position}}.",
-      "addNewCommentButton": "Lisää uusi kommentti"
+      "addNewCommentButton": "Lisää uusi kommentti",
+      "addNewCommentTitle": "Uuden kommentin lisääminen",
+      "cancelButton": "Peru"
     }
   }
 }

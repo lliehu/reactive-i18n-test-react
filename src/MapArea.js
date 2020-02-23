@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Card, CardBody, CardTitle } from 'reactstrap';
+import { Card, CardBody, CardTitle, Input, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 import { Button } from 'reactstrap';
 
@@ -31,6 +31,8 @@ const position = [mapState.lat, mapState.lng];
 
 const MapArea = (props) => {
   const [markerList, setMarkerList] = useState([position]);
+  const [modal, setModal] = useState(false);
+  const toggle = () => setModal(!modal);
   const { t } = useTranslation();
   const zoomInTitle = t('zoomInTitle');
   const zoomOutTitle = t('zoomOutTitle');
@@ -59,13 +61,23 @@ const MapArea = (props) => {
         { markerList.map((marker, index) => (
           <Marker key={index} position={marker}>
             <Popup>
-              <Button color="primary">{t('addNewCommentButton')}</Button>
+              <Button color="primary" onClick={toggle}>{t('addNewCommentButton')}</Button>
             </Popup>
           </Marker>
         )) }
         {/* Using key forces remounting of ZoomControl when zoomInTitle or zoomOutTitle change. */}
         <ZoomControl zoomInTitle={zoomInTitle} zoomOutTitle={zoomOutTitle} key={zoomInTitle + '|' + zoomOutTitle}/>
       </Map>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>{t('addNewCommentTitle')}</ModalHeader>
+        <ModalBody>
+          <Input type="textarea"/>
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={toggle}>{t('addNewCommentButton')}</Button>{' '}
+          <Button color="secondary" onClick={toggle}>{t('cancelButton')}</Button>
+        </ModalFooter>
+      </Modal>
     </Card>
   );
 };
