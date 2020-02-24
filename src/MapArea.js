@@ -65,22 +65,20 @@ const MapArea = (props) => {
           <Marker key={index} position={marker}>
             <Popup>
               {(markerComments[marker] || []).map((comment) => (
-                <div>
-                  <p>
-                    <span>
-                      {t('commentPrefix', {time: new Intl.DateTimeFormat(i18n.language, {
-                        year: 'numeric',
-                        month: 'numeric',
-                        day: 'numeric',
-                        hour: 'numeric',
-                        minute: 'numeric',
-                        second: 'numeric'
-                      }).format(comment.time)})}
-                    </span>
-                    <br/>
-                    {comment.text}
-                  </p>
-                </div>
+                <p>
+                  <span>
+                    {t('commentPrefix', {time: new Intl.DateTimeFormat(i18n.language, {
+                      year: 'numeric',
+                      month: 'numeric',
+                      day: 'numeric',
+                      hour: 'numeric',
+                      minute: 'numeric',
+                      second: 'numeric'
+                    }).format(comment.time)})}
+                  </span>
+                  <br/>
+                  {comment.text}
+                </p>
               ))}
               <Button color="primary" onClick={() => {setSelectedMarker(marker); toggle();}}>{t('addNewCommentButton')}</Button>
             </Popup>
