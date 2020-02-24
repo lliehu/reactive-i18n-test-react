@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Card, CardBody, CardTitle } from 'reactstrap';
+import { Button, Card, CardBody, CardTitle, FormGroup } from 'reactstrap';
 import Select from 'react-select';
 
 const locations = [
@@ -24,16 +24,18 @@ const MapNavigator = (props) => {
         <CardTitle>
           {t('mapNavigatorTitle')}
         </CardTitle>
-        <Select
-            value={value}
-            onChange={value => setValue(value)}
-            options={locations}
-            placeholder={t('locationSelectPlaceholder')}
-            loadingMessage={() => t('locationSelectLoadingMessage')}
-            noOptionsMessage={() => t('locationSelectNoOptions')}
+        <FormGroup>
+          <Select
+              value={value}
+              onChange={value => setValue(value)}
+              options={locations}
+              placeholder={t('locationSelectPlaceholder')}
+              loadingMessage={() => t('locationSelectLoadingMessage')}
+              noOptionsMessage={() => t('locationSelectNoOptions')}
 
           />
-          <Button onClick={() => {props.onChange(value.value)}}>{t('navigateMapButton')}</Button>
+        </FormGroup>
+        <Button onClick={() => {props.onChange(value.value)}}>{t('navigateMapButton')}</Button>
       </CardBody>
     </Card>
   );
