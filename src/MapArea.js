@@ -44,8 +44,6 @@ const MapArea = (props) => {
     props.addLogMessage('markerAddedMessage', {
       position: event.latlng.toString()
     })
-    let marker = leaflet.marker(event.latlng)
-    marker.bindPopup(event.latlng.toString())
     setMarkerList(markerList.concat([event.latlng]))
   }
 
