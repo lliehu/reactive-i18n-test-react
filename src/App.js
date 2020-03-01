@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Navbar, NavbarBrand, Container, Row, Col } from 'reactstrap';
+import { Button, Col, Container, Navbar, NavbarBrand, Row } from 'reactstrap';
 import { Helmet } from "react-helmet";
 import './App.css';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -51,6 +51,9 @@ class App extends React.Component {
           <Row>
             <Col>
               <MapNavigator onChange={this.flyTo.bind(this)}/>
+              <Button onClick={() => alert(this.props.t('alertTestMessage'))}>
+                {this.props.t('testAlertButton')}
+              </Button>
             </Col>
             <Col>
               <MessageLog messageList={this.state.messageList} />
