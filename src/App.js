@@ -7,6 +7,8 @@ import LanguageSwitcher from './LanguageSwitcher';
 import MessageLog from './MessageLog';
 import MapNavigator from './MapNavigator';
 import MapArea from './MapArea';
+import CatCount from './CatCount';
+import CatCountControls from './CatCountControls';
 
 class App extends React.Component {
   constructor(props) {
@@ -49,6 +51,10 @@ class App extends React.Component {
         </Navbar>
         <Container fluid={true}>
           <Row>
+            <Col>
+              <CatCount/>
+              <CatCountControls/>
+            </Col>
             <Col>
               <MapNavigator onChange={this.flyTo.bind(this)}/>
               <Button onClick={() => alert(this.props.t('alertTestMessage'))}>
