@@ -6,7 +6,7 @@ const CatCount = (props) => {
 
     return (
         <div>
-            {t('applicationName')}
+            {t('catCount', { context: 'female', count: 1 })}
         </div>
     );
 };

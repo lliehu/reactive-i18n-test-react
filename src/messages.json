@@ -20,7 +20,16 @@
       "cancelButton": "Cancel",
       "commentPrefix": "Someone commented {{time}}:",
       "testAlertButton": "Test alert()",
-      "alertTestMessage": "This is message for testing localization of a message in alert()."
+      "alertTestMessage": "This is message for testing localization of a message in alert().",
+      "catCount": "Only {{count}} cat plotting to kill them.",
+      "catCount_plural":"{{count}} cats plotting to kill them.",
+      "catCount_female":"Only {{count}} cat plotting to kill her.",
+      "catCount_female_plural":"{{count}} cats plotting to kill her.",
+      "catCount_male":"Only {{count}} cat plotting to kill him.",
+      "catCount_male_plural":"{{count}} cats plotting to kill him.",
+      "pronounSelectionMale": "He",
+      "pronounSelectionFemale": "She",
+      "pronounSelectionNeutral": "They"
     }
   },
   "fi": {
@@ -44,7 +53,16 @@
       "cancelButton": "Peru",
       "commentPrefix": "Joku kommentoi {{time}}:",
       "testAlertButton": "Testaa alert()",
-      "alertTestMessage": "Tämä on viesti, jolla testataan viestin lokalisointia alert()-funktiossa."
+      "alertTestMessage": "Tämä on viesti, jolla testataan viestin lokalisointia alert()-funktiossa.",
+      "catCount": "Vain yksi {{count}} kissa juonii hänen tappamista.",
+      "catCount_plural": "{{count}} kissaa juonii hänen tappamista.",
+      "catCount_female": "Vain yksi {{count}} kissa juonii hänen tappamista.",
+      "catCount_female_plural": "{{count}} kissaa juonii hänen tappamista.",
+      "catCount_male": "Vain yksi {{count}} kissa juonii hänen tappamista.",
+      "catCount_male_plural": "{{count}} kissaa juonii hänen tappamista.",
+      "pronounSelectionMale": "Hän (mies)",
+      "pronounSelectionFemale": "Hän (nainen)",
+      "pronounSelectionNeutral": "Hän (neutraali)"
     }
   }
 }
