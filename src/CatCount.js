@@ -5,9 +5,9 @@ const CatCount = (props) => {
     const { t } = useTranslation();
 
     return (
-        <div>
+        <span>
             {t('catCount', { context: props.pronoun, count: props.catCount })}
-        </div>
+        </span>
     );
 };
 

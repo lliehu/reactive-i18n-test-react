@@ -1,6 +1,6 @@
 import React from 'react';
 import { withTranslation } from 'react-i18next';
-import { Button, Col, Container, Navbar, NavbarBrand, Row } from 'reactstrap';
+import { Button, Card, CardBody, CardTitle, Col, Container, Navbar, NavbarBrand, Row } from 'reactstrap';
 import { Helmet } from "react-helmet";
 import './App.css';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -70,13 +70,19 @@ class App extends React.Component {
         <Container fluid={true}>
           <Row>
             <Col>
-              <CatCount catCount={this.state.catCount} pronoun={this.state.selectedPronoun}/>
-              <CatCountControls
-                catCount={this.state.catCount}
-                pronoun={this.state.selectedPronoun}
-                onCatCountChange={this.setCatCount.bind(this)}
-                onPronounChange={this.setPronoun.bind(this)}
-              />
+              <Card>
+                <CardBody>
+                  <CardTitle>
+                    <CatCount catCount={this.state.catCount} pronoun={this.state.selectedPronoun}/>
+                  </CardTitle>
+                  <CatCountControls
+                    catCount={this.state.catCount}
+                    pronoun={this.state.selectedPronoun}
+                    onCatCountChange={this.setCatCount.bind(this)}
+                    onPronounChange={this.setPronoun.bind(this)}
+                  />
+                </CardBody>
+              </Card>
             </Col>
             <Col>
               <MapNavigator onChange={this.flyTo.bind(this)}/>
