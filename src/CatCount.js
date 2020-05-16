@@ -6,7 +6,7 @@ const CatCount = (props) => {
 
     return (
         <div>
-            {t('catCount', { context: 'female', count: 1 })}
+            {t('catCount', { context: props.pronoun, count: props.catCount })}
         </div>
     );
 };

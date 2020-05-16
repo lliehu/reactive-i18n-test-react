@@ -15,7 +15,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       messageList: [],
-      center: [61.45, 23.85]
+      center: [61.45, 23.85],
+      catCount: 1,
+      selectedPronoun: 'other'
     };
   }
 
@@ -28,6 +30,22 @@ class App extends React.Component {
           parameters
         }])
       });
+    });
+  }
+
+  setCatCount(newCount) {
+    this.setState((state, props) => {
+      return Object.assign({}, state, {
+        catCount: newCount
+      })
+    });
+  }
+
+  setPronoun(newPronoun) {
+    this.setState((state, props) => {
+      return Object.assign({}, state, {
+        selectedPronoun: newPronoun
+      })
     });
   }
 
@@ -52,8 +70,13 @@ class App extends React.Component {
         <Container fluid={true}>
           <Row>
             <Col>
-              <CatCount/>
-              <CatCountControls/>
+              <CatCount catCount={this.state.catCount} pronoun={this.state.selectedPronoun}/>
+              <CatCountControls
+                catCount={this.state.catCount}
+                pronoun={this.state.selectedPronoun}
+                onCatCountChange={this.setCatCount.bind(this)}
+                onPronounChange={this.setPronoun.bind(this)}
+              />
             </Col>
             <Col>
               <MapNavigator onChange={this.flyTo.bind(this)}/>
