@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import Locize from 'i18next-locize-backend';
 import './index.css';
 import App from './App';
 import messages from './messages';
@@ -10,6 +11,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
+  .use(Locize)
   .init({
     resources: messages,
     lng: navigator.language,
@@ -20,7 +22,8 @@ i18n
     },
 
     react: {
-      bindI18nStore: "added removed"
+      bindI18nStore: "added removed",
+      useSuspense: false
     }
   });
 
