@@ -24,6 +24,14 @@ i18n
     react: {
       bindI18nStore: "added removed",
       useSuspense: false
+    },
+
+    // For setting environment variables, see:
+    // https://create-react-app.dev/docs/adding-custom-environment-variables/
+    backend: {
+      referenceLng: "en",
+      projectId: process.env.REACT_APP_LOCIZE_PROJECT_ID,
+      apiKey: process.env.REACT_APP_LOCIZE_API_KEY
     }
   });
 
