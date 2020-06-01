@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Locize from 'i18next-locize-backend';
+import locizeEditor from 'locize-editor';
 import './index.css';
 import App from './App';
 import messages from './messages';
@@ -12,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(Locize)
+  .use(locizeEditor)
   .init({
     debug: true,
     resources: messages,
@@ -33,6 +35,11 @@ i18n
       referenceLng: "en",
       projectId: process.env.REACT_APP_LOCIZE_PROJECT_ID,
       apiKey: process.env.REACT_APP_LOCIZE_API_KEY
+    },
+
+    editor: {
+      enabled: true
+      // TODO add onEditorSaved handler
     }
   });
 
