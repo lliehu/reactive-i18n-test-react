@@ -10,13 +10,15 @@ import messages from './messages';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+const USE_TRANSLATIONS_FROM_LOCIZE = true
+
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .use(Locize)
   .use(locizeEditor)
   .init({
     debug: true,
-    resources: messages,
+    resources: USE_TRANSLATIONS_FROM_LOCIZE ? null : messages,
     lng: navigator.language,
     fallbackLng: "en",
 
@@ -25,6 +27,7 @@ i18n
     },
 
     react: {
+      // This is needed so that onEditorSaved handler below will trigger a rerender.
       bindI18nStore: "added removed",
       useSuspense: false
     },
@@ -38,11 +41,14 @@ i18n
     },
 
     editor: {
-      enabled: true
-      // TODO add onEditorSaved handler
+      enabled: USE_TRANSLATIONS_FROM_LOCIZE,
+      onEditorSaved: function(lng, ns) {
+        i18n.reloadResources(lng, ns)
+      }
     }
   });
 
+// This proxy stuff is not needed for reactive localization with Locize.
 const editableMessages = JSON.parse(JSON.stringify(messages));
 const namespace = 'translation';
 for (const language of Object.keys(editableMessages)) {
