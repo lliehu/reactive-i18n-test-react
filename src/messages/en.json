@@ -10,7 +10,6 @@
   "locationSelectNoOptions": "No matches",
   "locationSelectLoadingMessage": "Loading...",
   "mapTitle": "Map",
-  "testMessage": "Testing, 1, 2, 3...",
   "markerAddedMessage": "Marker was added to the map at {{position}}.",
   "addNewCommentButton": "Add new comment",
   "addNewCommentTitle": "Add new comment",

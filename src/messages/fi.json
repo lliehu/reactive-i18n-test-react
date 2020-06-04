@@ -10,7 +10,6 @@
   "locationSelectNoOptions": "Ei osumia",
   "locationSelectLoadingMessage": "Ladataan...",
   "mapTitle": "Kartta",
-  "testMessage": "Kokeillaan, 1, 2, 3...",
   "markerAddedMessage": "Merkki lisättiin kartalle kohtaan {{position}}.",
   "addNewCommentButton": "Lisää uusi kommentti",
   "addNewCommentTitle": "Uuden kommentin lisääminen",
