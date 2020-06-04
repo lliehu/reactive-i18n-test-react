@@ -6,9 +6,19 @@ import Locize from 'i18next-locize-backend';
 import locizeEditor from 'locize-editor';
 import './index.css';
 import App from './App';
-import messages from './messages';
+import messagesEn from './messages/en';
+import messagesFi from './messages/fi';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+const messages = {
+  en: {
+    translation: messagesEn
+  },
+  fi: {
+    translation: messagesFi
+  }
+};
 
 const USE_TRANSLATIONS_FROM_LOCIZE = true
 
