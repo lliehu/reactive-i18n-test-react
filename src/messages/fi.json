@@ -1,7 +1,6 @@
 {
   "applicationName": "Reaktiivinen lokalisointitesti Reactilla ja i18nextillä",
   "messageLogTitle": "Viestiloki",
-  "languageSwitcherTitle": "Kielivalinta",
   "zoomInTitle": "Lähennä",
   "zoomOutTitle": "Loitonna",
   "automaticLanguage": "Automaattinen",

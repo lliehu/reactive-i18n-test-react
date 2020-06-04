@@ -1,7 +1,6 @@
 {
   "applicationName": "Reactive Localization Test With React and i18next",
   "messageLogTitle": "Message Log",
-  "languageSwitcherTitle": "Language Selection",
   "zoomInTitle": "Zoom in",
   "zoomOutTitle": "Zoom out",
   "automaticLanguage": "Automatic",
