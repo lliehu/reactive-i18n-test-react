@@ -6,12 +6,16 @@ import Locize from 'i18next-locize-backend';
 import locizeEditor from 'locize-editor';
 import './index.css';
 import App from './App';
+import messagesAa from './messages/aa';
 import messagesEn from './messages/en';
 import messagesFi from './messages/fi';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const messages = {
+  aa: { // in-context pseudo language
+    translation: messagesAa
+  },
   en: {
     translation: messagesEn
   },
@@ -20,7 +24,7 @@ const messages = {
   }
 };
 
-const USE_TRANSLATIONS_FROM_LOCIZE = true
+const USE_TRANSLATIONS_FROM_LOCIZE = false
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next

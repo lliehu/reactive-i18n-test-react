@@ -11,6 +11,10 @@ const languages = [
   {
     code: 'fi',
     nativeName: 'Suomi'
+  },
+  {
+    code: 'aa',
+    nativeName: 'In-Context'
   }
 ]
 
