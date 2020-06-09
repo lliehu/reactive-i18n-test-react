@@ -6,18 +6,18 @@ import Locize from 'i18next-locize-backend';
 import locizeEditor from 'locize-editor';
 import './index.css';
 import App from './App';
-import messagesAa from './messages/aa';
 import messagesEn from './messages/en';
+import messagesEs from './messages/es';
 import messagesFi from './messages/fi';
 import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const messages = {
-  aa: { // in-context pseudo language
-    translation: messagesAa
-  },
   en: {
     translation: messagesEn
+  },
+  es: { // in-context pseudo language
+    translation: messagesEs
   },
   fi: {
     translation: messagesFi
