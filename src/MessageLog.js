@@ -22,7 +22,7 @@ const MessageLog = (props) => {
                 second: 'numeric'
               }).format(message.time)
             }]&nbsp;
-            {t(message.messageId, message.parameters)}
+            <span>{t(message.messageId, message.parameters)}</span>
           </CardText>
         )) }
       </CardBody>
