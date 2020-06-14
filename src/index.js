@@ -84,7 +84,8 @@ window.PHRASEAPP_CONFIG = {
   debugMode: true,
   prefix: "[[__",
   suffix: "__]]",
-  fullReparse: true
+  fullReparse: true,
+  autoLowercase: false
 };
 
 ReactDOM.render(
