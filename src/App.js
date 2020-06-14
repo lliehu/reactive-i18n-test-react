@@ -1,5 +1,5 @@
 import React from 'react';
-import { withTranslation } from 'react-i18next';
+import { PhraseAppInitializer, withNamespaces } from 'react-i18next-phraseapp';
 import { Button, Card, CardBody, CardTitle, Col, Container, Navbar, NavbarBrand, Row } from 'reactstrap';
 import { Helmet } from "react-helmet";
 import './App.css';
@@ -60,6 +60,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+        <PhraseAppInitializer />
         <Helmet>
           <title>{this.props.t('applicationName')}</title>
         </Helmet>
@@ -105,4 +106,4 @@ class App extends React.Component {
   }
 }
 
-export default withTranslation()(App);
+export default withNamespaces()(App);

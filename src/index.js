@@ -4,6 +4,10 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Locize from 'i18next-locize-backend';
 import locizeEditor from 'locize-editor';
+
+import { I18nextProvider } from 'react-i18next';
+import { PhraseAppProvider } from 'react-i18next-phraseapp';
+
 import './index.css';
 import App from './App';
 import messagesEn from './messages/en';
@@ -20,7 +24,7 @@ const messages = {
   }
 };
 
-const USE_TRANSLATIONS_FROM_LOCIZE = true
+const USE_TRANSLATIONS_FROM_LOCIZE = false
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -75,7 +79,21 @@ window.messages = editableMessages;
 
 window.i18n = i18n;
 
-ReactDOM.render(<App />, document.getElementById('root'));
+window.PHRASEAPP_CONFIG = {
+  projectId: process.env.REACT_APP_PHRASE_PROJECT_ID,
+  debugMode: true,
+  prefix: "[[__",
+  suffix: "__]]",
+  fullReparse: true
+};
+
+ReactDOM.render(
+  <I18nextProvider i18n={ i18n }>
+    <PhraseAppProvider config={ window.PHRASEAPP_CONFIG }>
+      <App />
+    </PhraseAppProvider>
+  </I18nextProvider>,
+  document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

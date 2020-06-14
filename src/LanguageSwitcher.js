@@ -1,6 +1,6 @@
 import React from 'react';
 import i18next from 'i18next';
-import { withTranslation } from 'react-i18next';
+import { withNamespaces } from 'react-i18next-phraseapp';
 import { Button, ButtonGroup } from 'reactstrap';
 
 const languages = [
@@ -64,4 +64,4 @@ class LanguageSwitcher extends React.Component {
   }
 };
 
-export default withTranslation()(LanguageSwitcher);
+export default withNamespaces()(LanguageSwitcher);
