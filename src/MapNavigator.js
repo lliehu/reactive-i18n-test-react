@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from './phraseHookIntegration';
 import { Button, Card, CardBody, CardTitle, FormGroup } from 'reactstrap';
 import Select from 'react-select';
 

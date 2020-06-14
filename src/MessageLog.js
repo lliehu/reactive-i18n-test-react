@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from './phraseHookIntegration';
 import { Card, CardBody, CardText, CardTitle } from 'reactstrap';
 
 const MessageLog = (props) => {

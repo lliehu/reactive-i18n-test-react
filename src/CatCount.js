@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from './phraseHookIntegration';
 
 const CatCount = (props) => {
     const { t } = useTranslation();
